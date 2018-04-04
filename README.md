@@ -1,4 +1,4 @@
-# honoredebalzac.github.io
+# ebalzac.github.io
 Balzac, téléchargements
 
 Pour générer le site
