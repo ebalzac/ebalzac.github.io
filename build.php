@@ -30,7 +30,7 @@ $build = new Teinte_Build (
                      ),
     ),
     "sqlite" => "balzac.sqlite",
-    "formats" => "epub, html",
+    "formats" => "epub",
     //"formats" => "article, epub, kindle, html, iramuteq, markdown",
   )
 );
