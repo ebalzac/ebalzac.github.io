@@ -238,5 +238,36 @@
             </nav>
          </aside>
       </div>
+      <script>
+var ulElement = document.querySelector('.liste-romans ul');
+
+
+var liElements = Array.from(ulElement.querySelectorAll('li[class]'));
+
+
+for (var i = 0; i < liElements.length; i++) {
+    var customId = 'elementId' + (i + 1);
+    liElements[i].setAttribute('id', customId);
+}
+
+
+var customOrder = ['elementId12', 'elementId11', 'elementId10','elementId3', 'elementId5', 'elementId4', 'elementId6', 'elementId7', 'elementId8','elementId1',  'elementId2', 'elementId9',];
+liElements.sort(function(a, b) {
+    var idA = a.getAttribute('id');
+    var idB = b.getAttribute('id');
+    return customOrder.indexOf(idA) - customOrder.indexOf(idB);
+});
+
+
+liElements.forEach(function(li) {
+    ulElement.removeChild(li);
+});
+
+
+liElements.forEach(function(li) {
+    ulElement.appendChild(li);
+});
+
+</script>
    </body>
 </html>
