@@ -759,5 +759,25 @@
             </nav>
          </aside>
       </div>
+         <script>
+   var ulElement = document.querySelector('.liste-romans ul');
+var liElements = Array.from(ulElement.querySelectorAll('li[data-recherche]'));
+
+for (var i = 0; i < liElements.length; i++) {
+    var customId = 'elementId' + (i + 1);
+    liElements[i].setAttribute('id', customId);
+}
+
+var customOrder = ['elementId5', 'elementId3', 'elementId4', 'elementId6', 'elementId1', 'elementId2'];
+liElements.sort(function(a, b) {
+    var idA = a.getAttribute('id');
+    var idB = b.getAttribute('id');
+    return customOrder.indexOf(idA) - customOrder.indexOf(idB);
+});
+
+liElements.forEach(function(li) {
+    ulElement.appendChild(li); 
+});
+   </script>
    </body>
 </html>
